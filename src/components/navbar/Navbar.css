@@ -1,0 +1,125 @@
+/* :root { */
+/* light mode */
+/* --color-navbar-light: #1b1d2f;
+    --bg-navbar-light: white; */
+/* dark mode */
+/* --color-navbar-dark: white;
+    --bg-navbar-dark: #1b1d2f; */
+/* navbar */
+/* --padding: 0.4rem;
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-success: #28a745;
+} */
+
+
+/* [data-theme="light"] #navbar {
+    background-color: var(--bg-navbar-light);
+    color: var(--color-navbar-light);
+    box-shadow: 5px 1px 10px black;
+}
+
+[data-theme="dark"] #navbar {
+    background-color: var(--bg-navbar-dark);
+    color: var(--color-navbar-dark);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+} */
+
+
+
+/* 
+button {
+    padding: var(--padding);
+    height: 2rem;
+    border: none;
+    border-radius: 1.2rem;
+    font-weight: bold;
+} */
+
+#navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: clamp(0.5rem, 2.5vw, 1.2rem);
+    font-weight: bold;
+    animation: fadeIn 1s ease;
+}
+
+
+#navbar .navbar-logo {
+    margin: 0 1.5rem;
+    font-size: 1.2em;
+    flex: 0 1 10%;
+    animation: slideIn 2s ease;
+}
+
+#navbar .navbar-item-list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    flex: 0 1 40%;
+    animation: slideIn 2s ease;
+}
+
+#navbar .navbar-item-list:nth-child(2) {
+    flex: 1;
+}
+
+#navbar .navbar-item-link {
+    text-decoration: none;
+    color: inherit;
+    padding: 0.8rem;
+}
+
+#navbar .navbar-search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navbar .navbar-search {
+    width: 20vw;
+    margin: 0 0.5em;
+}
+
+#navbar .navbar-searchbtn {
+    /* padding: var(--padding);
+    border: none;
+    border-radius: 1.2rem; */
+    /* background-color: var(--color-success);
+    color: var(--color-navbar-light); */
+}
+
+
+
+
+@media (max-width: 768px) {
+    #navbar {
+        /* Adjust styles for smaller screens */
+        padding: 0.5rem;
+    }
+
+}
+
+/* Animations  */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-30px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,61 @@
+:root {
+    --bg-heading: whitesmoke;
+    --box-shadow01: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] {
+    --bg-heading: #515357;
+    --box-shadow01: rgba(255, 255, 255, 0.2);
+}
+
+#home {
+    /* display: flex; */
+    padding: 0.5rem;
+}
+
+#home .home-category-list {
+    flex: 1;
+}
+
+#home .category-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    margin: 1rem 0;
+    background-color: var(--bg-heading);
+    box-shadow: 2px 2px 1px 2px var(--box-shadow01);
+}
+
+#home .category-item {
+    font-size: clamp(1em, 2vw, 2em);
+    list-style: none;
+}
+
+#home .category-container button {
+    padding: 0.5rem;
+}
+
+
+
+#home .category-list-item {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Animations */
+
+.card-rotate:focus {
+    transition: rotate 1s ease-in-out;
+}
+
+@keyframes rotate {
+    from {
+        transform: skew(0deg, 0deg);
+    }
+
+    to {
+        transform: skew(180deg, 180deg);
+    }
+}

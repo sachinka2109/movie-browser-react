@@ -1,13 +1,84 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --bg-color: white;
+  --bg-color-btn: #fec300;
+  --bg-color-secondary: rgb(230, 226, 226);
+  --font-color: black;
+  --border-color: gray;
+  --font-weight: "bold";
+  --font-size: "1.2rem";
+  --color-active: var(--bg-color-btn);
+}
+
+/* [data-theme="light"] {
+  --bg-color: white;
+  --bg-color-btn: #fec300;
+  --bg-color-secondary: rgb(230, 226, 226);
+  --font-color: black;
+} */
+
+[data-theme="dark"] {
+  --bg-color: #202123;
+  --bg-color-btn: #8e7ef3;
+  --border-color: gray;
+  --bg-color-secondary: rgb(53, 53, 53);
+  --font-color: white;
+  --color-active: var(--bg-color-btn)
+}
+
+input[type="text"] {
+  padding: 1rem;
+  border-radius: 2rem;
+  outline: none;
+  background-color: var(--bg-color-secondary);
+  color: var(--font-color);
+  border: 1px solid var(--border-color);
+}
+
+
+button {
+  font-weight: var(--font-weight);
+  padding: 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: var(--bg-color-btn);
+  color: var(--font-color);
+}
+
+.active {
+  background-color: var(--color-active) !important;
+  border-radius: 2rem 1rem;
+  /* Set your desired active link styling */
+  /* font-weight: bold !important; */
+}
+
+#navbar {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+#home {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+#movies {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+#about {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+#footer {
+  background-color: var(--bg-color);
+  color: var(--font-color);
 }
