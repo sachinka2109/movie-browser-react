@@ -13,6 +13,13 @@ const MovieCard = ({ movie, genres }) => {
     setRotate(true);
   };
 
+  const fallbackImageUrl =
+    "https://image.tmdb.org/t/p/w500/yBZeccMJ1N9AYYzVRZayMxJla20.jpg";
+
+  const handleImageError = (event) => {
+    event.target.src = fallbackImageUrl;
+  };
+
   useEffect(() => {
     if (rotate) {
       const timeoutId = setTimeout(() => {
@@ -28,11 +35,12 @@ const MovieCard = ({ movie, genres }) => {
       <div
         id="card"
         onClick={handleClick}
-        className={rotate ? "card-rotate" : ""}
+        className={rotate ? "card-scale" : ""}
       >
         <img
           // src={`${config.img_url}/A4j8S6moJS2zNtRR8oWF08gRnL5.jpg`}
           src={`${config.img_url}${movie.poster_path}`}
+          onError={handleImageError}
           alt=""
           className="img-responsive"
         />

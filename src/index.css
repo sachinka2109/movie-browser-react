@@ -7,7 +7,8 @@
 :root {
   --bg-color: white;
   --bg-color-btn: #fec300;
-  --bg-color-secondary: rgb(230, 226, 226);
+  --bg-color-btn-hover: #ffce2f;
+  --bg-color-secondary: rgb(230, 229, 226);
   --font-color: black;
   --border-color: gray;
   --font-weight: "bold";
@@ -25,6 +26,7 @@
 [data-theme="dark"] {
   --bg-color: #202123;
   --bg-color-btn: #8e7ef3;
+  --bg-color-btn-hover: #5844dd;
   --border-color: gray;
   --bg-color-secondary: rgb(53, 53, 53);
   --font-color: white;
@@ -48,6 +50,16 @@ button {
   border-radius: 0.3rem;
   background-color: var(--bg-color-btn);
   color: var(--font-color);
+  transform: scale(1);
+}
+
+button:hover {
+  transform: scale(1.2);
+  background-color: var(--bg-color-btn-hover);
+}
+
+button:visited {
+  transform: scale(1);
 }
 
 .active {
@@ -63,12 +75,23 @@ button {
   border-bottom: 1px solid var(--border-color);
 }
 
+#navbar-menu-item-list {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
 #home {
   background-color: var(--bg-color);
   color: var(--font-color);
 }
 
 #movies {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+#movie-details {
   background-color: var(--bg-color);
   color: var(--font-color);
 }

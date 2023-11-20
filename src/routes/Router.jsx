@@ -21,6 +21,7 @@ const Router = () => {
                 element={<MovieDetails />}
               />
               <Route key={"about"} path="/about" element={<About />} />
+              <Route key={"search"} path="/search" element={<Movies />} />
             </React.Fragment>,
           ]}
         />
