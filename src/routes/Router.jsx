@@ -16,6 +16,12 @@ const Router = () => {
               <Route key={"home"} index element={<Home />} />
               <Route key={"movies"} path="/movies" element={<Movies />} />
               <Route
+                key={"favourites"}
+                path="/favourites"
+                element={<Movies />}
+              />
+              <Route key={"watchlist"} path="/watchlist" element={<Movies />} />
+              <Route
                 key={"movie-details"}
                 path="/movies/:id"
                 element={<MovieDetails />}

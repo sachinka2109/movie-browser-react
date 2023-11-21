@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
 }
 
 :root {
@@ -30,7 +33,7 @@
   --border-color: gray;
   --bg-color-secondary: rgb(53, 53, 53);
   --font-color: white;
-  --color-active: var(--bg-color-btn)
+  --color-active: var(--bg-color-btn);
 }
 
 input[type="text"] {
@@ -41,7 +44,6 @@ input[type="text"] {
   color: var(--font-color);
   border: 1px solid var(--border-color);
 }
-
 
 button {
   font-weight: var(--font-weight);

@@ -7,6 +7,7 @@ import {
   searchMovies,
 } from "../../services/dataService";
 import { MovieCard } from "../../components";
+import { getFavourites, getWatchlist } from "../../services/userService";
 
 const Movies = () => {
   const [data, setData] = useState([]);
@@ -15,6 +16,25 @@ const Movies = () => {
   const getMovies = async () => {
     try {
       const res = await getAllMovies();
+      setData(res.data.results);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+  const getAllFavourites = async () => {
+    try {
+      const res = await getFavourites();
+      console.log(res.data.results);
+      setData(res.data.results);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+  const getAllWatchlist = async () => {
+    try {
+      const res = await getWatchlist();
       setData(res.data.results);
     } catch (err) {
       console.log(err.message);
@@ -46,14 +66,22 @@ const Movies = () => {
     if (location.pathname.includes("movies")) {
       getMovies();
       getAllGenres();
-    } else {
+    } else if (location.pathname.includes("favourites")) {
+      getAllFavourites();
+      getAllGenres();
+    } else if (location.pathname.includes("watchlist")) {
+      getAllWatchlist();
+      getAllGenres();
+    } else if (location.pathname.includes("search")) {
       getSearchResults();
       getAllGenres();
     }
-  }, [location.state]);
+  }, [location.state, location.pathname]);
+
+  console.log(data);
   return (
     <div id="movies">
-      {!location.pathname.includes("/movies") && !location.state ? (
+      {location.pathname.includes("/search") && !location.state ? (
         <div>No search Result</div>
       ) : (
         data.map((movie) => (
